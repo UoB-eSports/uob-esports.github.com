@@ -4,17 +4,17 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>{% if page.title %}{{ page.title }} &ndash; {{ site.title }}{% else %}{{ site.title }} | {{ site.caption | markdownify | strip_html }}{% endif %}</title>
-		<link rel="author" href="/humans.txt">
-		<link rel="shortcut icon" href="/images/favicon.png" />
+		<link rel="author" href="{{ site.baseurl }}/humans.txt">
+		<link rel="shortcut icon" href="{{ site.baseurl }}/images/favicon.png" />
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" />
 	</head>
 	<body>
 		<!-- Header -->
 		<header class="jumbotron text-center">
 			<div class="container">
-				<h1><a href="/">{{ site.title }}</a></h1>
+				<h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
 				<small>{{ site.caption | markdownify }}</small>
-				<img class="logo" src="/images/logo.png" width="400" height="400" />
+				<img class="logo" src="{{ site.baseurl }}/images/logo-400x400.png" />
 			</div>
 		</header>
 		
@@ -34,7 +34,7 @@
 			<h2>More:</h2>
 			<ul>
 			{% for link in site.elsewhere %}
-				<li><a href="{{ link.link }}" title="{{ link.desc }}">{{ link.name }}</a></li>
+				<li><a href="{{ site.baseurl }}{{ link.link }}" title="{{ link.desc }}">{{ link.name }}</a></li>
 			{% endfor %}
 			</ul>
 		</section>
@@ -42,7 +42,7 @@
 		<!-- Footer -->
 		<footer class="well well-lg">
 			<div class="container">
-				<span>DotA &gt; League,  <a href="/humans.txt">confirmed</a>.</span>
+				<span>DotA &gt; League,  <a href="{{ site.baseurl }}/humans.txt">confirmed</a>.</span>
 			</div>
 		</footer>
 
