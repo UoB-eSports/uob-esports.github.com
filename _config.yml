@@ -1,6 +1,6 @@
 # Site Options
 title:      UoB eSports
-caption:    _University of Brighton_ eSports Society
+caption:    __University of Brighton__ eSports Society
 url:        http://uobesports.com
 email:      uobesports@aaunel.com
 #feedburner: http://feeds.feedburner.com/uobesports
@@ -42,6 +42,6 @@ exclude:
 future:      true
 timezone:    UCT
 lsi:         false
-pygments:    false
+highlighter: false
 markdown:    kramdown
 permalink:   /:title/
