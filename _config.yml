@@ -1,0 +1,47 @@
+# Site Options
+title:      UoB eSports
+caption:    _University of Brighton_ eSports Society
+url:        http://uobesports.com
+email:      uobesports@aaunel.com
+#feedburner: http://feeds.feedburner.com/uobesports
+analytics:  UA-20955831-8
+
+elsewhere:
+- name: News
+  link: /news/
+  desc: Recent Announcements
+- name: Twitter
+  link: http://twitter.com/UoBeSports
+  desc: Follow @UoBeSports on Twitter
+- name: Subscribe to feed
+  link: /feed/
+  desc: Subscribe to the website's Atom feed
+# - name: Subscribe by email
+#   link: http://feedburner.google.com/fb/a/mailverify?uri=uobesports
+#   desc: Subscribe to email updates
+- name: Teamspeak
+  link: http://webchat.freenode.net/?channels=asyncjs
+  desc: The UoB eSports Teamspeak server
+- name: Email Us
+  link: "mailto:uobesports@aaunel.com"
+  desc: Get in touch
+- name: Sponsor us
+  link: http://uobesports.com/sponsor-us/
+  desc: Sponsor the University of Brighton eSports Society or Teams
+
+# Jekyll Options
+safe:        true
+baseurl:     /
+
+source:      .
+destination: /tmp/esports
+exclude:
+- bin
+- Makefile
+- README.md
+future:      true
+timezone:    UCT
+lsi:         false
+pygments:    false
+markdown:    kramdown
+permalink:   /:title/
