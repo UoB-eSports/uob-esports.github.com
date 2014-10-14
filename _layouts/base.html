@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{% if page.title %}{{ page.title }} &ndash; {{ site.title }}{% else %}{{ site.title }} | {{ site.caption | markdownify | strip_html }}{% endif %}</title>
+		<link rel="author" href="/humans.txt">
+		<link rel="shortcut icon" href="/images/favicon.png" />
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" />
+	</head>
+	<body>
+		<!-- Header -->
+		<header class="jumbotron text-center">
+			<div class="container">
+				<h1><a href="/">{{ site.title }}</a></h1>
+				<small>{{ site.caption | markdownify }}</small>
+				<img class="logo" src="/images/logo.png" width="400" height="400" />
+			</div>
+		</header>
+		
+		<!-- Content -->
+		{% capture body %}{{ content }}{% endcapture %}
+		{{ body | replace:"	","" }}
+
+		<!-- About -->
+		<section class="container about">
+			<h2>About:</h2>
+			{% capture about %}{% include about.md %}{% endcapture %}
+			<div class="prose">{{ about | markdownify }}</div>
+		</section>
+		
+		<!-- Links -->
+		<section class="container links">
+			<h2>More:</h2>
+			<ul>
+			{% for link in site.elsewhere %}
+				<li><a href="{{ link.link }}" title="{{ link.desc }}">{{ link.name }}</a></li>
+			{% endfor %}
+			</ul>
+		</section>
+
+		<!-- Footer -->
+		<footer class="well well-lg">
+			<div class="container">
+				<span>DotA &gt; League,  <a href="/humans.txt">confirmed</a>.</span>
+			</div>
+		</footer>
+
+		{% if site.analytics and site.highlighter == true %}
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', '{{ site.analytics }}']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		{% endif %}
+	</body>
+</html>
