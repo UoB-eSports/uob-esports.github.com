@@ -1,0 +1,22 @@
+---
+---
+/* TEAM */
+
+President: Oliver Eddleston
+Location: Brighton, UK
+
+Vice President & Design: Richard Goodman
+Location: Brighton, UK
+
+Development: Yann Eves
+IGN: aaunel
+Twitter: @aaunel
+Location: Brighton, UK
+
+/* THANKS */
+
+Twitter Bootstrap and Glyphicons for styling and assets.
+
+/* SITE */
+
+Last update: {{ site.time | date:"%Y/%m/%d" }}
