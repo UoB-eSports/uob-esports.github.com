@@ -11,7 +11,7 @@ elsewhere:
   link: /news/
   desc: Recent Announcements
 - name: Twitter
-  link: http://twitter.com/UoBeSports
+  link: //twitter.com/UoBeSports
   desc: Follow @UoBeSports on Twitter
 - name: Subscribe to feed
   link: /feed/
@@ -20,13 +20,13 @@ elsewhere:
 #   link: http://feedburner.google.com/fb/a/mailverify?uri=uobesports
 #   desc: Subscribe to email updates
 - name: Teamspeak
-  link: http://webchat.freenode.net/?channels=asyncjs
+  link: //649513.ts3.mpgs.co
   desc: The UoB eSports Teamspeak server
 - name: Email Us
   link: "mailto:uobesports@aaunel.com"
   desc: Get in touch
 - name: Sponsor us
-  link: http://uobesports.com/sponsor-us/
+  link: /sponsor-us/
   desc: Sponsor the University of Brighton eSports Society or Teams
 
 # Jekyll Options
