@@ -4,10 +4,10 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <title>{% if page.title %}{{ page.title }} &ndash; {{ site.title }}{% else %}{{ site.title }} | {{ site.caption | markdownify | strip_html }}{% endif %}</title>
-        <link rel="author" href="{{ site.baseurl }}/humans.txt">
-        <link rel="shortcut icon" href="{{ site.baseurl }}/images/favicon.png" />
+        <link rel="author" href="/humans.txt">
+        <link rel="shortcut icon" href="/images/favicon.png" />
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" />
+        <link rel="stylesheet" href="/css/main.css" />
     </head>
     <body>
         <!-- Navigation -->
@@ -22,13 +22,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+                    <a class="navbar-brand" href="/">{{ site.title }}</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="collapse">
                     <ul class="nav navbar-nav">
-                        <li {% if current[1] == 'index.html' %}class='active'{% endif %}><a href="{{ site.baseurl }}/">Home</a></li>
-                        <li {% if current[1] == 'join' %}class='active'{% endif %}><a href="{{ site.baseurl }}/join">Join Us</a></li>
+                        <li {% if current[1] == 'index.html' %}class='active'{% endif %}><a href="/">Home</a></li>
+                        <li {% if current[1] == 'join' %}class='active'{% endif %}><a href="/join">Join Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -48,7 +48,7 @@
         <!-- Footer -->
         <footer class="navbar navbar-inverse navbar-fixed-bottom">
             <div class="container">
-                <p class="navbar-text muted">DotA &gt; League,  <a href="{{ site.baseurl }}/humans.txt">confirmed</a>.</p>
+                <p class="navbar-text muted">DotA &gt; League,  <a href="/humans.txt">confirmed</a>.</p>
                 <ul class="nav navbar-nav navbar-right">
                     {% for link in site.elsewhere %}
                     <li><a href="{{ link.link }}" title="{{ link.desc }}">{{ link.name }}</a></li>

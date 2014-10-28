@@ -31,7 +31,7 @@ elsewhere:
 
 # Jekyll Options
 safe:        true
-baseurl:     /UoB-eSports
+baseurl:     /
 
 source:      .
 destination: /tmp/esports
