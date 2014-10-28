@@ -1,63 +1,77 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>{% if page.title %}{{ page.title }} &ndash; {{ site.title }}{% else %}{{ site.title }} | {{ site.caption | markdownify | strip_html }}{% endif %}</title>
-		<link rel="author" href="{{ site.baseurl }}/humans.txt">
-		<link rel="shortcut icon" href="{{ site.baseurl }}/images/favicon.png" />
-		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" />
-	</head>
-	<body>
-		<!-- Header -->
-		<header class="jumbotron text-center">
-			<div class="container">
-				<h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
-				<small>{{ site.caption | markdownify }}</small>
-				<img class="logo" src="{{ site.baseurl }}/images/logo-400x400.png" />
-			</div>
-		</header>
-		
-		<!-- Content -->
-		{% capture body %}{{ content }}{% endcapture %}
-		{{ body | replace:"	","" }}
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>{% if page.title %}{{ page.title }} &ndash; {{ site.title }}{% else %}{{ site.title }} | {{ site.caption | markdownify | strip_html }}{% endif %}</title>
+        <link rel="author" href="{{ site.baseurl }}/humans.txt">
+        <link rel="shortcut icon" href="{{ site.baseurl }}/images/favicon.png" />
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" />
+    </head>
+    <body>
+        <!-- Navigation -->
+        {% assign current = page.url | downcase | split: '/' %}
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="collapse">
+                    <ul class="nav navbar-nav">
+                        <li {% if current[1] == 'index.html' %}class='active'{% endif %}><a href="{{ site.baseurl }}/">Home</a></li>
+                        <li {% if current[1] == 'join' %}class='active'{% endif %}><a href="{{ site.baseurl }}/join">Join Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Content -->
+        {% capture body %}{{ content }}{% endcapture %}
+        {{ body }}
 
-		<!-- About -->
-		<section class="container about">
-			<h2>About:</h2>
-			{% capture about %}{% include about.md %}{% endcapture %}
-			<div class="prose">{{ about | markdownify }}</div>
-		</section>
-		
-		<!-- Links -->
-		<section class="container links">
-			<h2>More:</h2>
-			<ul>
-			{% for link in site.elsewhere %}
-				<li><a href="{{ site.baseurl }}{{ link.link }}" title="{{ link.desc }}">{{ link.name }}</a></li>
-			{% endfor %}
-			</ul>
-		</section>
+        <!-- About -->
+        <section class="container about">
+            <h2>About:</h2>
+            {% capture about %}{% include about.md %}{% endcapture %}
+            <div class="prose">{{ about | markdownify }}</div>
+        </section>
 
-		<!-- Footer -->
-		<footer class="well well-lg">
-			<div class="container">
-				<span>DotA &gt; League,  <a href="{{ site.baseurl }}/humans.txt">confirmed</a>.</span>
-			</div>
-		</footer>
+        <!-- Footer -->
+        <footer class="navbar navbar-inverse navbar-fixed-bottom">
+            <div class="container">
+                <p class="navbar-text muted">DotA &gt; League,  <a href="{{ site.baseurl }}/humans.txt">confirmed</a>.</p>
+                <ul class="nav navbar-nav navbar-right">
+                    {% for link in site.elsewhere %}
+                    <li><a href="{{ link.link }}" title="{{ link.desc }}">{{ link.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </footer>
 
-		{% if site.analytics and site.highlighter == true %}
-		<script>
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', '{{ site.analytics }}']);
-			_gaq.push(['_trackPageview']);
+        <!-- Scripts -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/collapse.js"></script>
 
-			(function() {
-				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			})();
-		</script>
-		{% endif %}
-	</body>
+        {% if site.analytics and site.highlighter == true %}
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', '{{ site.analytics }}']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        {% endif %}
+    </body>
 </html>
