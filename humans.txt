@@ -3,14 +3,21 @@
 /* TEAM */
 
 President: Oliver Eddleston
+IGN: TH3 SP00F3R
 Location: Brighton, UK
 
 Vice President & Design: Richard Goodman
+IGN: sir moosef
 Location: Brighton, UK
 
-Development: Yann Eves
+Development Lead: Yann Eves
 IGN: aaunel
 Twitter: @aaunel
+Location: Brighton, UK
+
+Development: Kai Eves
+IGN: kaij
+Twitter: @kai_eveshollis
 Location: Brighton, UK
 
 /* THANKS */
