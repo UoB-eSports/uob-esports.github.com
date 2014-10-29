@@ -98,5 +98,27 @@ body {
  */
 
 /**
+ *  Modules
+ */
+
+.teamspeak-widget {
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.teamspeak-widget .panel-body {
+    overflow: auto;
+    max-height: 300px;
+}
+
+.teamspeak-widget .teamspeak-widget-generated {
+    overflow: hidden;
+}
+
+.teamspeak-widget .teamspeak-widget-generated>div {
+    margin-bottom: -16px;
+}
+
+/**
  *  Footer
  */
