@@ -38,13 +38,6 @@
         {% capture body %}{{ content }}{% endcapture %}
         {{ body }}
 
-        <!-- About -->
-        <section class="container about">
-            <h2>About:</h2>
-            {% capture about %}{% include about.md %}{% endcapture %}
-            <div class="prose">{{ about | markdownify }}</div>
-        </section>
-
         <!-- Footer -->
         <footer class="navbar navbar-inverse navbar-fixed-bottom">
             <div class="container">
