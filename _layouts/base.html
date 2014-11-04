@@ -6,7 +6,8 @@
         <title>{% if page.title %}{{ page.title }} &ndash; {{ site.title }}{% else %}{{ site.title }} | {{ site.caption | markdownify | strip_html }}{% endif %}</title>
         <link rel="author" href="/humans.txt">
         <link rel="shortcut icon" href="/images/favicon.png" />
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" />
+        <link href='http://fonts.googleapis.com/css?family=Exo+2:700,500,900' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/css/main.css" />
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
@@ -28,7 +29,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="collapse">
                     <ul class="nav navbar-nav">
-                        <li {% if current[1] == 'index.html' %}class='active'{% endif %}><a href="/">Home</a></li>
+                        <li {% if current[1] == 'index.html' %}class='active'{% endif %}><a href="{{ site.baseurl }}">Home</a></li>
                         <li {% if current[1] == 'join' %}class='active'{% endif %}><a href="/join">Join Us</a></li>
                     </ul>
                 </div>
@@ -52,7 +53,7 @@
         </footer>
 
         <!-- Scripts -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/collapse.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
         {% if site.analytics and site.highlighter == true %}
         <script>

@@ -2,4 +2,51 @@
 layout: base
 ---
 
-<p>Join us!</p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<p class="lead"><strong>Sign up to the UoB eSports Society</strong></p>
+			<form action="https://docs.google.com/forms/d/1xKUmS7rtpTQFUdNDm3o5ojtYZCnlHHW6CmmtGKPDdGg/formResponse" method="POST" target="_blank">
+		        <ol role="list" class="list-unstyled">
+		        	<li class="form-group">
+		        		<input required type="text" name="entry.170127055" value="" id="entry_170127055" class="form-control" placeholder="First Name">
+		        	</li>
+		        	<li class="form-group">
+		        		<input required type="text" name="entry.1036688392" value="" id="entry_1036688392" class="form-control" placeholder="Last Name">
+		        	</li>
+		        	<li class="form-group">
+		        		<div class="input-group">
+		        			<input required type="text" name="entry.1186158577" value="" id="entry_1186158577" class="form-control" placeholder="Email Address">
+		        			<span class="input-group-addon">@brighton.ac.uk</span>
+		        		</div>
+		        	</li>
+		        	<li class="form-group">
+		        		<div class="input-league input-group">
+		        			<input type="text" name="entry.1924184488" value="" id="entry_1924184488" class="form-control" placeholder="Summoner Name">
+		        			<span class="input-league-addon input-group-addon text-hide">League</span>
+		        		</div>
+		        	</li>
+		        	<li class="form-group">
+		        		<div class="input-steam input-group">
+		        			<input type="text" name="entry.483017577" value="" id="entry_483017577" class="form-control" placeholder="Steam ID">
+		        			<span class="input-steam-addon input-group-addon text-hide">Valve</span>
+		        		</div>
+		        	</li>
+		        	<li class="form-group">
+		        		<div class="input-blizzard input-group">
+		        			<input type="text" name="entry.506229445" value="" id="entry_506229445" class="form-control" placeholder="BattleNet ID">
+		        			<span class="input-blizzard-addon input-group-addon text-hide">Blizzard</span>
+		        		</div>
+		        	</li>
+		        </ol>
+		        <div class="well">
+	        		<button type="submit" class="btn btn-primary">Submit</button>
+	        		<a href="{{ site.baseurl }}" class="btn btn-default">Cancel</a>
+	        	</div> 
+		    </form>
+		</div>
+	</div>
+</div>
+
+<!-- Scripts -->
+<script src="/js/forms.js"></script>

@@ -15,6 +15,8 @@
  */
 
 body {
+    font-family: "Exo 2", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
     padding: 70px 0 0;
 }
 
@@ -23,6 +25,10 @@ body {
         padding-bottom: 70px;
     }
 }
+
+/**
+ *  Typography
+ */
 
 /**
  *  Header
@@ -118,6 +124,30 @@ body {
 /**
  *  Content
  */
+
+.input-league .input-league-addon,
+.input-steam .input-steam-addon,
+.input-blizzard .input-blizzard-addon {
+    min-width: 34px;
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.input-league .input-league-addon {
+    background-size: auto 104%;
+    background-image: url(//d11y3kg0vwf4zk.cloudfront.net/assets/league_logo-59ee819b80e61f27f8c1fcf932abdd59.png);
+}
+
+.input-steam .input-steam-addon {
+    background-image: url(//img2.wikia.nocookie.net/__cb20130607061922/fallout/images/3/3b/Steam-Logo.png);
+}
+
+.input-blizzard .input-blizzard-addon {
+    background-image: url(//eu.battle.net/static/local-common/images/logos/bnet-default.png);
+    background-color:#4a4a4a;
+    background-position: 0 0;
+}
 
 /**
  *  Modules
