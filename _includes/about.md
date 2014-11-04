@@ -1,4 +1,4 @@
-The University of Brighton eSports Society was founded September 2013, and is the Universities first competitive gaming society.
+The University of Brighton eSports Society was founded September 2014, and is the Universities first competitive gaming society.
 
 Our aim is to enable students who which to take their gaming experience to the next level by competing against players with a much higher skill thresh hold, as well as competing for physical prizes.
 
