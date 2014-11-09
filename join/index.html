@@ -5,48 +5,145 @@ layout: base
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-			<p class="lead"><strong>Sign up to the UoB eSports Society</strong></p>
-			<form action="https://docs.google.com/forms/d/1xKUmS7rtpTQFUdNDm3o5ojtYZCnlHHW6CmmtGKPDdGg/formResponse" method="POST" target="_blank">
-		        <ol role="list" class="list-unstyled">
-		        	<li class="form-group">
-		        		<input required type="text" name="entry.170127055" value="" id="entry_170127055" class="form-control" placeholder="First Name">
-		        	</li>
-		        	<li class="form-group">
-		        		<input required type="text" name="entry.1036688392" value="" id="entry_1036688392" class="form-control" placeholder="Last Name">
-		        	</li>
-		        	<li class="form-group">
-		        		<div class="input-group">
-		        			<input required type="text" name="entry.1186158577" value="" id="entry_1186158577" class="form-control" placeholder="Email Address">
-		        			<span class="input-group-addon">@brighton.ac.uk</span>
-		        		</div>
-		        	</li>
-		        	<li class="form-group">
-		        		<div class="input-league input-group">
-		        			<input type="text" name="entry.1924184488" value="" id="entry_1924184488" class="form-control" placeholder="Summoner Name">
-		        			<span class="input-league-addon input-group-addon text-hide">League</span>
-		        		</div>
-		        	</li>
-		        	<li class="form-group">
-		        		<div class="input-steam input-group">
-		        			<input type="text" name="entry.483017577" value="" id="entry_483017577" class="form-control" placeholder="Steam ID">
-		        			<span class="input-steam-addon input-group-addon text-hide">Valve</span>
-		        		</div>
-		        	</li>
-		        	<li class="form-group">
-		        		<div class="input-blizzard input-group">
-		        			<input type="text" name="entry.506229445" value="" id="entry_506229445" class="form-control" placeholder="BattleNet ID">
-		        			<span class="input-blizzard-addon input-group-addon text-hide">Blizzard</span>
-		        		</div>
-		        	</li>
-		        </ol>
-		        <div class="well">
-	        		<button type="submit" class="btn btn-primary">Submit</button>
-	        		<a href="{{ site.baseurl }}" class="btn btn-default">Cancel</a>
-	        	</div> 
-		    </form>
+			<ul class="nav nav-tabs" role="tablist" id="myTab">
+				<li role="presentation" class="active"><a href="#society" role="tab" data-toggle="tab">Society</a></li>
+				<li role="presentation"><a href="#league" role="tab" data-toggle="tab">League</a></li>
+				<li role="presentation"><a href="#dota" role="tab" data-toggle="tab">DotA</a></li>
+				<li role="presentation"><a href="#counterstrike" role="tab" data-toggle="tab">Counter Strike</a></li>
+			</ul>
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="society">
+					<p class="lead">
+						<strong>Sign up to the UoB eSports Society</strong><br />
+						<small>Add yourself to individual team rosters after as you like</small>
+					</p>
+					<form action="https://docs.google.com/forms/d/1xKUmS7rtpTQFUdNDm3o5ojtYZCnlHHW6CmmtGKPDdGg/formResponse" method="POST" target="_blank">
+				        <ol role="list" class="list-unstyled">
+				        	<li class="form-group">
+				        		<input required type="text" name="entry.170127055" value="" id="entry_170127055" class="form-control" placeholder="First Name">
+				        	</li>
+				        	<li class="form-group">
+				        		<input required type="text" name="entry.1036688392" value="" id="entry_1036688392" class="form-control" placeholder="Last Name">
+				        	</li>
+				        	<li class="form-group">
+				        		<div class="input-group">
+				        			<input required type="text" name="entry.1186158577" value="" id="entry_1186158577" class="form-control" placeholder="University Email">
+				        			<span class="input-group-addon">@brighton.ac.uk</span>
+				        		</div>
+				        	</li>
+				        	<li class="form-group">
+				        		<div class="input-league input-group">
+				        			<input type="text" name="entry.1924184488" value="" id="entry_1924184488" class="form-control" placeholder="Summoner Name">
+				        			<span class="input-league-addon input-group-addon text-hide">League</span>
+				        		</div>
+				        	</li>
+				        	<li class="form-group">
+				        		<div class="input-steam input-group">
+				        			<input type="text" name="entry.483017577" value="" id="entry_483017577" class="form-control" placeholder="Steam ID">
+				        			<span class="input-steam-addon input-group-addon text-hide">Valve</span>
+				        		</div>
+				        	</li>
+				        	<li class="form-group">
+				        		<div class="input-blizzard input-group">
+				        			<input type="text" name="entry.506229445" value="" id="entry_506229445" class="form-control" placeholder="BattleNet ID">
+				        			<span class="input-blizzard-addon input-group-addon text-hide">Blizzard</span>
+				        		</div>
+				        	</li>
+				        </ol>
+				        <div class="well">
+			        		<button type="submit" class="btn btn-primary">Submit</button>
+			        		<a href="{{ site.baseurl }}" class="btn btn-default">Cancel</a>
+			        	</div>
+				    </form>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="league">
+					<p class="lead">
+						<strong>Add yourself to our League of Legends team roster</strong><br />
+						<small>Be sure to sign up to the society beforehand!</small>
+					</p>
+					<form action="" method="POST" target="_blank">
+				        <ol role="list" class="list-unstyled">
+				        	<li class="form-group">
+				        		<input required type="text" name="entry.170127055" value="" id="entry_170127055" class="form-control" placeholder="Name">
+				        	</li>
+				        	<li class="form-group">
+				        		<div class="input-steam input-group">
+				        			<input type="text" name="entry.483017577" value="" id="entry_483017577" class="form-control" placeholder="Steam ID">
+				        			<span class="input-steam-addon input-group-addon text-hide">Valve</span>
+				        		</div>
+				        	</li>
+				        	<li class="form-group">
+				        		<div class="row">
+				        			<div class="col-md-6">
+				        				<div class="input-group">
+						        			<input type="number" name="entry.1186158577" value="" id="entry_1186158577" class="form-control" placeholder="Solo*">
+						        			<span class="input-group-addon">MMR</span>
+						        		</div>
+				        			</div>
+				        			<div class="col-md-6">
+				        				<div class="input-group">
+						        			<input type="number" name="entry.1186158577" value="" id="entry_1186158577" class="form-control" placeholder="Party*">
+						        			<span class="input-group-addon">MMR</span>
+						        		</div>
+				        			</div>
+				        		</div>
+				        		<div class="row">
+				        			<div class="col-md-12">
+				        				<p class="help-block pull-right">* Leave blank if unranked</p>
+				        			</div>
+				        		</div>
+				        	</li>
+				        	<li>
+				        		<p class="lead"><small>Position you main:</small></p>
+				        		<div class="btn-group-vertical" data-toggle="buttons">
+									<label class="btn btn-default">
+										<input required type="radio" name="entry.1269836385" value="Hard Carry" id="group_1269836385_1" role="radio" autocomplete="off"> Hard Carry
+									</label>
+									<label class="btn btn-default">
+										<input required type="radio" name="entry.1269836385" value="Mid / Solo / Ganker" id="group_1269836385_2" role="radio" autocomplete="off"> Mid / Solo / Ganker
+									</label>
+									<label class="btn btn-default">
+										<input required type="radio" name="entry.1269836385" value="Offlane" id="group_1269836385_3" role="radio" autocomplete="off"> Offlane
+									</label>
+									<label class="btn btn-default">
+										<input required type="radio" name="entry.1269836385" value="Support / Jungler" id="group_1269836385_4" role="radio" autocomplete="off"> Support / Jungler
+									</label>
+									<label class="btn btn-default">
+										<input required type="radio" name="entry.1269836385" value="Hard Support" id="group_1269836385_5" role="radio" autocomplete="off"> Hard Support
+									</label>
+				        		</div>
+							</li>
+				        </ol>
+						<div class="well">
+			        		<button type="submit" class="btn btn-primary">Submit</button>
+			        		<a href="/join" class="btn btn-default">Cancel</a>
+			        	</div>
+				    </form>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="dota">
+					<p class="lead">
+						<strong>Add yourself to our DotA team roster</strong><br />
+						<small>Be sure to sign up to the society beforehand!</small>
+					</p>
+						<div class="well">
+			        		<button type="submit" class="btn btn-primary">Submit</button>
+			        		<a href="/join" class="btn btn-default">Cancel</a>
+			        	</div>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="counterstrike">
+					<p class="lead">
+						<strong>Add yourself to our Counter Strike team roster</strong><br />
+						<small>Be sure to sign up to the society beforehand!</small>
+					</p>
+						<div class="well">
+			        		<button type="submit" class="btn btn-primary">Submit</button>
+			        		<a href="/join" class="btn btn-default">Cancel</a>
+			        	</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
 
 <!-- Scripts -->
-<script src="/js/forms.js"></script>
+<!-- script src="/js/forms.js"></script -->

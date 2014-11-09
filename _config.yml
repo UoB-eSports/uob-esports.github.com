@@ -2,7 +2,7 @@
 title:      UoB eSports
 caption:    We are the University of Brighton eSports Society
 url:        http://uobesports.com
-email:      uobesports@aaunel.com
+email:      oliver@uobesports.com
 #feedburner: http://feeds.feedburner.com/uobesports
 analytics:  UA-20955831-8
 
@@ -23,7 +23,7 @@ elsewhere:
   link: //649513.ts3.mpgs.co
   desc: The UoB eSports Teamspeak server
 - name: Email Us
-  link: "mailto:uobesports@aaunel.com"
+  link: "mailto:oliver@uobesports.com"
   desc: Get in touch
 - name: Sponsor us
   link: /sponsor-us/
