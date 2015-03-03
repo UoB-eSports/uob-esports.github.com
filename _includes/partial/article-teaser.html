@@ -1,0 +1,6 @@
+<h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+<p>
+	{% capture timestamp %}{{ article.date | date:"%FT%T%z" }}{% endcapture %}
+	<time title="{{ timestamp }}" datetime="{{ timestamp }}">{{ article.date | date:"%d %B %Y" }}</time>
+    {{ article.summary | markdownify }}
+</p>

@@ -1,0 +1,32 @@
+---
+layout: base
+---
+{% assign news = site.categories.news %}
+
+<article class="container">
+    <header>
+        <h2>All Articles</h2>
+    </header>
+    {% for article in news %}
+        {% assign first_item = false %}
+        {% capture month %}{{ article.date | date:"%B %Y" }}{% endcapture %}
+        {% if current_month != month %}
+            {% unless forloop.first %}
+        </ul>
+    </section>
+            {% endunless %}
+    <section>
+        <h2>{{ month }}:</h2>
+        <ul>
+        {% endif %}
+            <li>{% include partial/article-teaser.html %}</li>
+        {% if current_month != month %}
+            {% assign first_item = true %}
+            {% assign current_month = month %}
+        {% else %}
+            {% assign first_item = false %}
+        {% endif %}
+    {% endfor %}
+        </ul>
+    </section>
+</article>
