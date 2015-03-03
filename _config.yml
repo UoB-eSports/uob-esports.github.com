@@ -25,9 +25,9 @@ elsewhere:
 - name: Email Us
   link: "mailto:oliver@uobesports.com"
   desc: Get in touch
-- name: Sponsor us
-  link: /sponsor-us/
-  desc: Sponsor the University of Brighton eSports Society or Teams
+# - name: Sponsor us
+#   link: /sponsors/
+#   desc: Sponsor the University of Brighton eSports Society or Teams
 
 # Jekyll Options
 safe:        true
@@ -42,6 +42,5 @@ exclude:
 future:      true
 timezone:    UCT
 lsi:         false
-# highlighter: false
 markdown:    kramdown
 permalink:   /:title/
