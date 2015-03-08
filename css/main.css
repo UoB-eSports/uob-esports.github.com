@@ -50,7 +50,7 @@ body {
     width: 400px;
     height: 72px;
     margin: 0 auto;
-    background-image: url(../images/logo-text--400x72.png);
+    background-image: url(../images/banner/logo-text--400x72.png);
     background-size: 100%;
     background-position: 0 0;
     background-repeat: no-repeat;
@@ -117,7 +117,7 @@ body {
         width: 600px;
         height: 108px;
         padding-top: 200px;
-        background-image: url(../images/logo-text--600x108.png);
+        background-image: url(../images/banner/logo-text--600x108.png);
         top: 150px;
         left: 42%;
         z-index: 1;
@@ -138,18 +138,17 @@ body {
 }
 
 .input-league .input-league-addon {
-    background-size: auto 104%;
-    background-image: url(//d11y3kg0vwf4zk.cloudfront.net/assets/league_logo-59ee819b80e61f27f8c1fcf932abdd59.png);
+    background-image: url(../images/social/summoner_logo--35x35.png);
 }
 
 .input-steam .input-steam-addon {
-    background-image: url(//img2.wikia.nocookie.net/__cb20130607061922/fallout/images/3/3b/Steam-Logo.png);
+    background-image: url(../images/social/steam_logo--35x35.png);
 }
 
 .input-blizzard .input-blizzard-addon {
-    background-image: url(//eu.battle.net/static/local-common/images/logos/bnet-default.png);
+    background-image: url(../images/social/battlenet_logo--35x35.png);
     background-color:#4a4a4a;
-    background-position: 0 0;
+    background-position: -1px 0;
 }
 
 /**
