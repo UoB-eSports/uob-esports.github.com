@@ -3,76 +3,78 @@ layout: base
 ---
 {% assign news = site.categories.news %}
 {% for article in news %}
-	{% if article.id == page.id %}
-		{% assign current == article %}
-		{% assign total = forloop.length %}
-		{% assign prev = forloop.index %}
-		{% capture next %}{{ forloop.index | minus:2}}{% endcapture %}
-	{% endif %}
+    {% if article.id == page.id %}
+        {% assign current == article %}
+        {% assign total = forloop.length %}
+        {% assign prev = forloop.index %}
+        {% capture next %}{{ forloop.index | minus:2}}{% endcapture %}
+    {% endif %}
 {% endfor %}
 
 <article class="container">
-	<header>
-		{% assign article = page %}
-		<h1><a href="{{ article.url }}">{{ article.title }}</a></h1>
-		<p class="muted">
-			{% if article.authors %}
-				Written by 
-				{% capture list %}
-					{% for author in article.authors %}
-						{% if forloop.first != true and forloop.last %} &amp; {% endif %}
-						{% unless forloop.first or forloop.last %}, {% endunless %}
-						{% if author.link %}
-							<a href="{{ author.link }}">{{ author.name }}</a>
-						{% else %}
-							{{ author.name }}
-						{% endif %}
-					{% endfor %}
-				{% endcapture %}
-				{{ list | strip_newlines }}.
-			{% endif %}
-		</p>
-	</header>
-	<section>
-		{% capture timestamp %}{{ article.date | date:"%FT%T%z" }}{% endcapture %}
-		<time title="{{ timestamp }}" datetime="{{ timestamp }}">
-			<span class="date">{{ article.date | date:"%A, %-d %B %Y" }}</span>
-		</time>
-	</section>
-	<section class="{% if article.image %} image{% endif %}">
-		{% if article.image %}
-			<a href="{{ article.image.link }}" title="{{ article.image.title }}">
-				<img src="{{ article.image.url }}" alt="{{ article.image.title }}" />
-			</a>
-		{% endif %}
-		{{ article.content | markdownify }}
-	</section>
-	<aside class="hidden-xs hidden-sm">
-		<h2>Next article:</h2>
-		<ul>
-			{% for article in articles offset:next limit:1 %}
-				<li>{% include partial/article-teaser.html %}</li>
-			{% endfor %}
-			{% if next == "-1" %}
-				<li>This is the most recent article</li>
-			{% endif %}
-		</ul>
-		<p class="muted">View <a href="/news/">all articles</a></p>
-	</aside>
-	<aside class="hidden-xs hidden-sm">
-		<h2>Previous article:</h2>
-		<ul>
-			{% for article in articles offset:prev limit:1 %}
-				<li>{% include partial/article-teaser.html %}</li>
-			{% endfor %}
-			{% if prev == total %}
-				<li>This is the last article</li>
-			{% endif %}
-		</ul>
-		<p class="muted">View <a href="/news/">all articles</a></p>
-	</aside>
-	<footer>
-		<p class="muted hidden-md hidden-lg">View <a href="/news/">all articles</a></p>
-        <p class="muted">Back to <a href="/">homepage</a></p>
-    </footer>
+    <section class="row">
+        <article class="col-sm-8">
+            <header>
+                {% assign article = page %}
+                {% if article.image %}
+                    <aside class="col-sm-12">
+                        <img src="{{ article.image.url }}" class="center-block img-responsive img-rounded" alt="{{ article.image.title }}" />
+                        <br class="clearfix" />
+                    </aside>
+                {% endif %}
+                <h1><a href="{{ article.url }}">{{ article.title }}</a></h1>
+                <p class="muted col-sm-12">
+                    <br />
+                    {% if article.authors %}
+                        Written by 
+                        {% capture list %}
+                            {% for author in article.authors %}
+                                {% if forloop.first != true and forloop.last %} &amp; {% endif %}
+                                {% unless forloop.first or forloop.last %}, {% endunless %}
+                                {% if author.link %}
+                                    <a href="{{ author.link }}">{{ author.name }}</a>
+                                {% else %}
+                                    {{ author.name }}
+                                {% endif %}
+                            {% endfor %}
+                        {% endcapture %}
+                        {{ list | strip_newlines }}
+                    {% endif %}
+                </p>
+            </header>
+            <section class="clearfix">
+                {% capture timestamp %}{{ article.date | date:"%FT%T%z" }}{% endcapture %}
+                <time title="{{ timestamp }}" datetime="{{ timestamp }}" class="col-sm-12">
+                    <span class="date">{{ article.date | date:"%A, %-d %B %Y" }}</span>
+                </time>
+            </section>
+            <hr />
+            <section class="clearfix">
+                {{ article.content | markdownify }}
+            </section>
+        </article>
+        <br class="clearfix" />
+        <aside class="col-sm-4">
+            {% for article in news offset:prev limit:1 %}
+            <section class="hidden-xs hidden-sm">
+                <p class="lead"><strong>Previous article</strong></p>
+                {% include partial/article-teaser.html %}
+            </section>
+            <hr />
+            {% endfor %}
+            {% for article in news offset:next limit:1 %}
+            <section class="hidden-xs hidden-sm">
+                <p class="lead"><strong>Next article</strong></p>
+                {% include partial/article-teaser.html %}
+            </section>
+            <hr />
+            {% endfor %}
+            <footer>
+                <ul class="nav navbar-nav">
+                    <li class="muted"><p class="navbar-text">View <a href="/news/">all articles</a></p></li>
+                    <li class="muted"><p class="navbar-text">Back to <a href="/">homepage</a></p></li>
+                </ul>
+            </footer>
+        </aside>
+    </section>
 </article>

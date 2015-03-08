@@ -5,21 +5,21 @@ layout: base
 
 <article class="container">
     <header>
-        <h2>All Articles</h2>
+        <h1><strong>All Articles</strong></h1>
     </header>
     {% for article in news %}
         {% assign first_item = false %}
         {% capture month %}{{ article.date | date:"%B %Y" }}{% endcapture %}
         {% if current_month != month %}
             {% unless forloop.first %}
-        </ul>
     </section>
             {% endunless %}
-    <section>
-        <h2>{{ month }}:</h2>
-        <ul>
+    <section class="clearfix">
+        <p class="lead"><strong>{{ month }}:</strong></p>
         {% endif %}
-            <li>{% include partial/article-teaser.html %}</li>
+            <div class="col-sm-6">
+                {% include partial/article-teaser.html %}
+            </div>
         {% if current_month != month %}
             {% assign first_item = true %}
             {% assign current_month = month %}
@@ -27,6 +27,5 @@ layout: base
             {% assign first_item = false %}
         {% endif %}
     {% endfor %}
-        </ul>
     </section>
 </article>
