@@ -4,7 +4,7 @@ caption:    We are the University of Brighton eSports Society
 url:        http://uobesports.com
 email:      oliver@uobesports.com
 feedburner: http://feeds.feedburner.com/uobesports
-analytics:  UA-20955831-8
+# analytics:  UA-20955831-8
 
 elsewhere:
 - name: Twitter
@@ -13,9 +13,9 @@ elsewhere:
 - name: Subscribe to feed
   link: /feed/
   desc: Subscribe to the website's Atom feed
-# - name: Subscribe by email
-#   link: http://feedburner.google.com/fb/a/mailverify?uri=uobesports
-#   desc: Subscribe to email updates
+- name: Subscribe by email
+  link: http://feedburner.google.com/fb/a/mailverify?uri=uobesports
+  desc: Subscribe to email updates
 - name: Teamspeak
   link: //649513.ts3.mpgs.co
   desc: The UoB eSports Teamspeak server

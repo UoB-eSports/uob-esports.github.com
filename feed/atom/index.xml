@@ -4,7 +4,9 @@ layout:
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  <title>UoB eSports</title>
- <subtitle>The University of Brighton eSports Society</subtitle> 
+ <subtitle>The University of Brighton eSports Society</subtitle>
+ <icon>{{ site.url }}/favicon.ico</icon>
+ <logo>{{ site.url }}/images/banner/logo.png</logo>
  <link href="{{ site.url }}/feed/" rel="self"/>
  <link href="{{ site.url }}/feed/" />
  <updated>{{ site.time | date_to_xmlschema }}</updated>
@@ -25,6 +27,13 @@ layout:
    <link href="{{ site.url }}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>{{ post.id }}</id>
+   {% if post.image %}
+   <image>
+    <url>{{ post.image.url | xml_escape }}</url>
+    <title>{{ post.image.title | xml_escape }}</title>
+    <link>{{ post.image.url | xml_escape }}</link>
+   </image>
+   {% endif %}
    <content type="html">
      {% capture body %}
        {{ post.content | markdownify }}
