@@ -5,7 +5,7 @@ authors:
 - name: Jack 'Major Pain' Gould
   link: http://www.dotabuff.com/players/110852302
 image:
-  url:   /images/content/2015-02-22.png
+  url:   http://uobesports.com/images/content/2015-02-22.png
   title: "Dota 2 Year Beast Event"
 video:
   youtube:
