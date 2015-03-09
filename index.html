@@ -4,87 +4,105 @@ layout: base
 {% assign news = site.categories.news %}
 {% assign offset = 0 %}
 
-<!-- Header -->
-<header class="banner">
-    <a href="{{ site.baseurl }}" class="banner-logo text-hide hidden-xs hidden-sm">Brighton eSports Logo</a>
-    <i class="banner-divider hidden-xs hidden-sm"></i>
-    <h1 class="banner-text text-hide">University of Brighton eSports Society</h1>
-</header>
+<article>
 
-<!-- Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="row hidden-xs hidden-sm">
-                <div class="col-md-12">
-                    <p class="lead"><strong>{{ site.caption }}</strong></p>
-                </div>
-            </div>
-            <div class="row">
-                {% capture about %}{% include about.md %}{% endcapture %}
-                <div class="col-md-12">{{ about | markdownify }}</div>
-            </div>
-        </div>
-        <div class="col-md-2 hidden-xs hidden-sm">
-            <div class="row">
-                <div class="col-md-12">
-                    <a href="/join/#league">
-                        <img src="/images/game/league_logo--130x130.png" alt="League of Legends" class="img-circle center-block" width="130" height="130">
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <br />
-                    <a href="/join/#dota">
-                        <img src="/images/game/dota_logo--130x130.png" alt="Dota 2" class="img-circle center-block" width="130" height="130">
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <br />
-                    <a href="/join/#counterstrike">
-                        <img src="/images/game/counterstrike_logo--130x130.png" alt="Counter Strike" class="img-circle center-block" width="130" height="130">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="row">
-                <div class="col-xs-3">
-                    <a href="http://www.facebook.com/UoBeSports" target="_blank">
-                        <img src="/images/social/facebook_logo--70x70.png" alt="Facebook" class="img-circle center-block" width="70" height="70">
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a href="http://twitter.com/UoBeSports" target="_blank">
-                        <img src="/images/social/twitter_logo--70x70.jpg" alt="Twitter" class="img-circle center-block" width="70" height="70">
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a href="http://www.twitch.tv/uobesports" target="_blank"> 
-                        <img src="/images/social/twitch_logo--70x70.png" alt="Twitch" class="img-circle center-block" width="70" height="70"> 
-                    </a>
-                </div>
-                <div class="col-xs-3">
-                    <a href="http://steamcommunity.com/groups/UoBeSports" target="_blank">
-                        <img src="/images/social/steam_logo--70x70.png" alt="Steam" class="img-circle center-block" width="70" height="70">
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="teamspeak-widget panel panel-default">
-                        <div class="panel-heading">TeamSpeak3 Server <span class="label label-info">Live!</span></div>
-                        <div class="panel-body">
-                            <div class="teamspeak-widget-generated">
-                                <script type="text/javascript" src="http://view.light-speed.com/teamspeak3.php?IP=85.236.100.27&PORT=12897&QUERY=19914&UID=106464&display=block&font=14px&background=transparent&server_info_background=transparent&server_info_text=%23333333&server_name_background=transparent&server_name_text=%23333333&info_background=transparent&channel_background=transparent&channel_text=%23333333&username_background=transparent&username_text=%23333333"></script>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    <!-- Header -->
+    <header class="banner">
+        <a href="{{ site.baseurl }}" class="banner-logo text-hide hidden-xs hidden-sm">Brighton eSports Logo</a>
+        <i class="banner-divider hidden-xs hidden-sm"></i>
+        <h1 class="banner-text text-hide">University of Brighton eSports Society</h1>
+    </header>
+
+    <!-- Content -->
+    <section class="container" role="main">
+        <article class="row">
+            <section class="col-md-6">
+                <article class="row">
+                    <section class="col-md-12">
+                        <section>
+                            <p class="lead"><strong>Latest Article</strong></p>
+                            {% for article in news %}
+                                {% unless current %}
+                                    {% assign current = article %}{% assign offset = forloop.rindex %}
+                                    {% include partial/article-teaser.html %}
+                                {% endunless %}
+                            {% endfor %}
+                        </section>
+                    </section>
+                </article>
+                <hr />
+                <article class="row hidden-xs hidden-sm">
+                    <section class="col-md-12">
+                        <p class="lead"><strong>{{ site.caption }}</strong></p>
+                    </section>
+                </article>
+                <article class="row">
+                    {% capture about %}{% include about.md %}{% endcapture %}
+                    <section class="col-md-12">{{ about | markdownify }}</section>
+                </article>
+            </section>
+            <section class="col-md-2 hidden-xs hidden-sm">
+                <article class="row">
+                    <section class="col-md-12">
+                        <a href="/join/#league">
+                            <img src="/images/game/league_logo--130x130.png" alt="League of Legends" class="img-circle center-block" width="130" height="130">
+                        </a>
+                    </section>
+                </article>
+                <article class="row">
+                    <section class="col-md-12">
+                        <br />
+                        <a href="/join/#dota">
+                            <img src="/images/game/dota_logo--130x130.png" alt="Dota 2" class="img-circle center-block" width="130" height="130">
+                        </a>
+                    </section>
+                </article>
+                <article class="row">
+                    <section class="col-md-12">
+                        <br />
+                        <a href="/join/#counterstrike">
+                            <img src="/images/game/counterstrike_logo--130x130.png" alt="Counter Strike" class="img-circle center-block" width="130" height="130">
+                        </a>
+                    </section>
+                </article>
+            </section>
+            <section class="col-md-4">
+                <article class="row">
+                    <section class="col-xs-3">
+                        <a href="http://www.facebook.com/UoBeSports" target="_blank">
+                            <img src="/images/social/facebook_logo--70x70.png" alt="Facebook" class="img-circle center-block" width="70" height="70">
+                        </a>
+                    </section>
+                    <section class="col-xs-3">
+                        <a href="http://twitter.com/UoBeSports" target="_blank">
+                            <img src="/images/social/twitter_logo--70x70.jpg" alt="Twitter" class="img-circle center-block" width="70" height="70">
+                        </a>
+                    </section>
+                    <section class="col-xs-3">
+                        <a href="http://www.twitch.tv/uobesports" target="_blank"> 
+                            <img src="/images/social/twitch_logo--70x70.png" alt="Twitch" class="img-circle center-block" width="70" height="70"> 
+                        </a>
+                    </section>
+                    <section class="col-xs-3">
+                        <a href="http://steamcommunity.com/groups/UoBeSports" target="_blank">
+                            <img src="/images/social/steam_logo--70x70.png" alt="Steam" class="img-circle center-block" width="70" height="70">
+                        </a>
+                    </section>
+                </article>
+                <article class="row">
+                    <section class="col-md-12">
+                        <article class="teamspeak-widget panel panel-default">
+                            <header class="panel-heading">TeamSpeak3 Server <span class="label label-info">Live!</span></header>
+                            <section class="panel-body">
+                                <div class="teamspeak-widget-generated">
+                                    <script type="text/javascript" src="http://view.light-speed.com/teamspeak3.php?IP=85.236.100.27&PORT=12897&QUERY=19914&UID=106464&display=block&font=14px&background=transparent&server_info_background=transparent&server_info_text=%23333333&server_name_background=transparent&server_name_text=%23333333&info_background=transparent&channel_background=transparent&channel_text=%23333333&username_background=transparent&username_text=%23333333"></script>
+                                </div>
+                            </section>
+                        </article>
+                    </section>
+                </article>
+            </section>
+        </article>
+    </section>
+
+</article>

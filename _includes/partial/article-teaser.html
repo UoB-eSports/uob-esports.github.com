@@ -1,16 +1,22 @@
 <article class="media row">
-    <section class="media-body col-sm-8">
-        <h3 class="media-heading"><a href="{{ article.url }}">{{ article.title }}</a></h3>
+    <section class="media-body col-sm-12">
+        <aside class="pull-right col-sm-6">
+            <a href="{{ article.url }}">
+                <img src="{{ article.image.url }}" class="img-responsive img-rounded media-object" alt="{{ article.image.title }}" />
+            </a>
+            <br class="clearfix" />
+        </aside>
+        <h3 class="media-heading">
+            <a href="{{ article.url }}">{{ article.title }}</a>
+            {% for tag in article.tags reverse limit:1 %}
+            <small><span class="label label-primary">{{ tag }}</span></small>
+            {% endfor %}
+        </h3>
         <p>
             {% capture timestamp %}{{ article.date | date:"%FT%T%z" }}{% endcapture %}
             <time title="{{ timestamp }}" datetime="{{ timestamp }}">{{ article.date | date:"%d %B %Y" }}</time>
             <br />
-            {{ article.content | markdownify | strip_html | truncatewords: 30 }}
+            {{ article.excerpt | markdownify | strip_html }}
         </p>
     </section>
-    <aside class="media-right col-sm-4">
-        <a href="{{ article.url }}">
-            <img src="{{ article.image.url }}" class="img-responsive img-rounded media-object" alt="{{ article.image.title }}" />
-        </a>
-    </aside>
 </article>
