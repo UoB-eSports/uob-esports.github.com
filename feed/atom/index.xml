@@ -1,45 +1,34 @@
 ---
-layout:
 ---
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
- <title>UoB eSports</title>
- <subtitle>The University of Brighton eSports Society</subtitle>
- <icon>{{ site.url }}/favicon.ico</icon>
- <logo>{{ site.url }}/images/banner/logo.png</logo>
- <link href="{{ site.url }}/feed/" rel="self"/>
- <link href="{{ site.url }}/feed/" />
- <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>{{ site.url }}/feed/atom/</id>
- <author>
-   <name>{{ site.title }}</name>
-   <email>{{ site.email }}</email>
- </author>
- {% for post in site.posts limit:5 %}
- <entry>
-   <title>{{ post.title | xml_escape }}</title>
-   {% if post.author %}
-   <author>
-     <name>{{ post.author.name }}</name>
-     <uri>{{ post.author.link }}</uri>
-   </author>
-   {% endif %}
-   <link href="{{ site.url }}{{ post.url }}"/>
-   <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>{{ post.id }}</id>
-   {% if post.image %}
-   <image>
-    <url>{{ post.image.url | xml_escape }}</url>
-    <title>{{ post.image.title | xml_escape }}</title>
-    <link>{{ post.image.url | xml_escape }}</link>
-   </image>
-   {% endif %}
-   <content type="html">
-     {% capture body %}
-       {{ post.content | markdownify }}
-     {% endcapture %}
-     {{ body | xml_escape }}
-   </content>
- </entry>
- {% endfor %}
-</feed>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <description type="html">{{ site.caption | markdownify | xml_escape }}</description>
+    <icon>{{ site.url }}/favicon.ico</icon>
+    <logo>{{ site.url }}/images/banner/logo.png</logo>
+    <updated>{{ site.time | date_to_xmlschema }}</updated>
+    <link>{{ site.url }}</link>
+    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+    {% for post in site.posts limit:10 %}
+      <item>
+        <title>{{ post.title | xml_escape }}</title>
+        {% for author in post.authors %}
+          <dc:creator>{{ author.name | xml_escape }}</dc:creator>
+        {% endfor %}
+        {% if post.excerpt %}
+          <description type="html">{{ post.excerpt | markdownify | xml_escape }}</description>
+        {% else %}
+          <description type="html">{{ post.content | markdownify | xml_escape }}</description>
+        {% endif %}
+        <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+        <link>{{ site.url }}{{ post.url }}</link>
+        <atom:link href="{{ post.image.url | xml_escape }}" rel="enclosure" />
+        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+        <content type="html">
+          {{ post.content | markdownify | xml_escape }}
+        </content>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>
