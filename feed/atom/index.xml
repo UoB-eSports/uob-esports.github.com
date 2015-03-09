@@ -1,0 +1,36 @@
+---
+layout:
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>UoB eSports</title>
+ <subtitle>The University of Brighton eSports Society</subtitle> 
+ <link href="{{ site.url }}/feed/" rel="self"/>
+ <link href="{{ site.url }}/feed/" />
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>{{ site.url }}/feed/atom/</id>
+ <author>
+   <name>{{ site.title }}</name>
+   <email>{{ site.email }}</email>
+ </author>
+ {% for post in site.posts limit:5 %}
+ <entry>
+   <title>{{ post.title | xml_escape }}</title>
+   {% if post.author %}
+   <author>
+     <name>{{ post.author.name }}</name>
+     <uri>{{ post.author.link }}</uri>
+   </author>
+   {% endif %}
+   <link href="{{ site.url }}{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>{{ post.id }}</id>
+   <content type="html">
+     {% capture body %}
+       {{ post.content | markdownify }}
+     {% endcapture %}
+     {{ body | xml_escape }}
+   </content>
+ </entry>
+ {% endfor %}
+</feed>
