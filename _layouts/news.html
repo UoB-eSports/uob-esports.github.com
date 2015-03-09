@@ -16,13 +16,22 @@ layout: base
         <article class="col-sm-8">
             <header>
                 {% assign article = page %}
-                {% if article.image %}
+                {% if article.video %}
+                    {% if article.video.youtube %}
+                        {% include partial/article-youtube-embed.html %}
+                    {% endif %}
+                {% elsif article.image %}
                     <aside class="col-sm-12">
                         <img src="{{ article.image.url }}" class="center-block img-responsive img-rounded" alt="{{ article.image.title }}" />
                         <br class="clearfix" />
                     </aside>
                 {% endif %}
-                <h1><a href="{{ article.url }}">{{ article.title }}</a></h1>
+                <h1>
+                    <a href="{{ article.url }}">{{ article.title }}</a>
+                    {% for tag in article.tags reverse limit:1 %}
+                    <small><span class="label label-primary">{{ tag }}</span></small>
+                    {% endfor %}
+                </h1>
                 <p class="muted col-sm-12">
                     <br />
                     {% if article.authors %}
@@ -32,7 +41,7 @@ layout: base
                                 {% if forloop.first != true and forloop.last %} &amp; {% endif %}
                                 {% unless forloop.first or forloop.last %}, {% endunless %}
                                 {% if author.link %}
-                                    <a href="{{ author.link }}">{{ author.name }}</a>
+                                    <a href="{{ author.link }}" target="_blank">{{ author.name }}</a>
                                 {% else %}
                                     {{ author.name }}
                                 {% endif %}
@@ -48,10 +57,20 @@ layout: base
                     <span class="date">{{ article.date | date:"%A, %-d %B %Y" }}</span>
                 </time>
             </section>
+            <section class="clearfix">
+                <p class="col-sm-12">
+                    {% for tag in article.tags offset:1 limit:3 %}
+                    <span class="label label-default">{{ tag }}</span>
+                    {% endfor %}
+                </p>
+            </section>
             <hr />
             <section class="clearfix">
                 {{ article.content | markdownify }}
             </section>
+            {% if article.comments %}
+                {% include partial/article-comments.html %}
+            {% endif %}
         </article>
         <br class="clearfix" />
         <aside class="col-sm-4">
