@@ -7,9 +7,6 @@ email:      oliver@uobesports.com
 analytics:  UA-20955831-8
 
 elsewhere:
-- name: News
-  link: /news/
-  desc: Recent Announcements
 - name: Twitter
   link: //twitter.com/UoBeSports
   desc: Follow @UoBeSports on Twitter

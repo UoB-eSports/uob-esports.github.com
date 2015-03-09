@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="collapse">
                     <ul class="nav navbar-nav">
                         <li {% if current[1] == 'index.html' %}class='active'{% endif %}><a href="{{ site.baseurl }}">Home</a></li>
-                        <li class="{% if current[1] == 'news' %}active {% endif %}hidden-md hidden-lg"><a href="/news">News</a></li>
+                        <li {% if current[1] == 'blog' %}class='active'{% endif %}><a href="/blog">Blog</a></li>
                         <li {% if current[1] == 'join' %}class='active'{% endif %}><a href="/join">Join Us</a></li>
                     </ul>
                 </div>

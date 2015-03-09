@@ -14,8 +14,8 @@ tags:
 - season
 - event
 - commentary
-layout: news
-category: news
+layout: post
+category: blog
 comments: true
 published: true
 ---

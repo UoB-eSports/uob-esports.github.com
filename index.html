@@ -1,7 +1,7 @@
 ---
 layout: base
 ---
-{% assign news = site.categories.news %}
+{% assign blog = site.categories.blog %}
 {% assign offset = 0 %}
 
 <article>
@@ -21,7 +21,7 @@ layout: base
                     <section class="col-md-12">
                         <section>
                             <p class="lead"><strong>Latest Article</strong></p>
-                            {% for article in news %}
+                            {% for article in blog %}
                                 {% unless current %}
                                     {% assign current = article %}{% assign offset = forloop.rindex %}
                                     {% include partial/article-teaser.html %}

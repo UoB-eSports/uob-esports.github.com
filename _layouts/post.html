@@ -1,8 +1,8 @@
 ---
 layout: base
 ---
-{% assign news = site.categories.news %}
-{% for article in news %}
+{% assign blog = site.categories.blog %}
+{% for article in blog %}
     {% if article.id == page.id %}
         {% assign current == article %}
         {% assign total = forloop.length %}
@@ -74,14 +74,14 @@ layout: base
         </article>
         <br class="clearfix" />
         <aside class="col-sm-4">
-            {% for article in news offset:prev limit:1 %}
+            {% for article in blog offset:prev limit:1 %}
             <section class="hidden-xs hidden-sm">
                 <p class="lead"><strong>Previous article</strong></p>
                 {% include partial/article-teaser.html %}
             </section>
             <hr />
             {% endfor %}
-            {% for article in news offset:next limit:1 %}
+            {% for article in blog offset:next limit:1 %}
             <section class="hidden-xs hidden-sm">
                 <p class="lead"><strong>Next article</strong></p>
                 {% include partial/article-teaser.html %}
@@ -90,7 +90,7 @@ layout: base
             {% endfor %}
             <footer>
                 <ul class="nav navbar-nav">
-                    <li class="muted"><p class="navbar-text">View <a href="/news/">all articles</a></p></li>
+                    <li class="muted"><p class="navbar-text">View <a href="/blog/">all articles</a></p></li>
                     <li class="muted"><p class="navbar-text">Back to <a href="/">homepage</a></p></li>
                 </ul>
             </footer>

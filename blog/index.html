@@ -1,13 +1,13 @@
 ---
 layout: base
 ---
-{% assign news = site.categories.news %}
+{% assign blog = site.categories.blog %}
 
 <article class="container">
     <header>
         <h1><strong>All Articles</strong></h1>
     </header>
-    {% for article in news %}
+    {% for article in blog %}
         {% assign first_item = false %}
         {% capture month %}{{ article.date | date:"%B %Y" }}{% endcapture %}
         {% if current_month != month %}

@@ -12,8 +12,8 @@ tags:
 - NUEL
 - tournament
 - commentary
-layout: news
-category: news
+layout: post
+category: blog
 comments: true
 published: true
 ---
