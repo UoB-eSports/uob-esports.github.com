@@ -3,6 +3,7 @@ number: 03
 title: "Bust Mode or Beast Mode"
 authors:
 - name: Jack 'Major Pain' Gould
+  link: http://www.dotabuff.com/players/110852302
 image:
   url:   /images/content/2015-02-22.png
   title: "Dota 2 Year Beast Event"
