@@ -4,7 +4,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>{{ site.title | xml_escape }}</title>
-    <description type="html">{{ site.caption | markdownify | xml_escape }}</description>
+    <description>{{ site.caption | markdownify | strip_html | xml_escape }}</description>
     <icon>{{ site.url }}/favicon.ico</icon>
     <logo>{{ site.url }}/images/banner/logo.png</logo>
     <updated>{{ site.time | date_to_xmlschema }}</updated>
@@ -17,9 +17,9 @@
           <dc:creator>{{ author.name | xml_escape }}</dc:creator>
         {% endfor %}
         {% if post.excerpt %}
-          <description type="html">{{ post.excerpt | markdownify | xml_escape }}</description>
+          <description>{{ post.excerpt | markdownify | strip_html | xml_escape }}</description>
         {% else %}
-          <description type="html">{{ post.content | markdownify | xml_escape }}</description>
+          <description>{{ post.content | markdownify | strip_html | xml_escape }}</description>
         {% endif %}
         <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
         <link>{{ site.url }}{{ post.url }}</link>
