@@ -67,5 +67,10 @@
             })();
         </script>
         {% endif %}
+
+        {% if site.share %}
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ site.share }}" async></script>
+        {% endif %}
+
     </body>
 </html>

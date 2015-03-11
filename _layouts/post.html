@@ -52,17 +52,22 @@ layout: base
                 </p>
             </header>
             <section class="clearfix">
-                {% capture timestamp %}{{ article.date | date:"%FT%T%z" }}{% endcapture %}
-                <time title="{{ timestamp }}" datetime="{{ timestamp }}" class="col-sm-12">
-                    <span class="date">{{ article.date | date:"%A, %-d %B %Y" }}</span>
-                </time>
-            </section>
-            <section class="clearfix">
-                <p class="col-sm-12">
-                    {% for tag in article.tags offset:1 limit:3 %}
-                    <span class="label label-default">{{ tag }}</span>
-                    {% endfor %}
-                </p>
+                <div class="col-sm-6">
+                    {% capture timestamp %}{{ article.date | date:"%FT%T%z" }}{% endcapture %}
+                    <time title="{{ timestamp }}" datetime="{{ timestamp }}">
+                        <span class="date">{{ article.date | date:"%A, %-d %B %Y" }}</span>
+                    </time>
+                    <p>
+                        {% for tag in article.tags offset:1 limit:3 %}
+                        <span class="label label-default">{{ tag }}</span>
+                        {% endfor %}
+                    </p>
+                </div>
+                <aside class="col-sm-6">
+                    {% if article.share %}
+                        {% include partial/article-share.html %}
+                    {% endif %}
+                </aside>
             </section>
             <hr />
             <section class="clearfix">

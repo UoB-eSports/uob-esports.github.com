@@ -14,6 +14,7 @@ tags:
 - commentary
 layout: post
 category: blog
+share: true
 comments: true
 published: true
 ---
