@@ -9,7 +9,7 @@
         <h3 class="media-heading">
             <a href="{{ article.url }}">{{ article.title }}</a>
             {% for tag in article.tags reverse limit:1 %}
-            <small><span class="label label-primary">{{ tag }}</span></small>
+            <small class="hidden-xs hidden-sm"><span class="label label-primary">{{ tag }}</span></small>
             {% endfor %}
         </h3>
         <p>

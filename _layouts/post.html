@@ -29,7 +29,7 @@ layout: base
                 <h1>
                     <a href="{{ article.url }}">{{ article.title }}</a>
                     {% for tag in article.tags reverse limit:1 %}
-                    <small><span class="label label-primary">{{ tag }}</span></small>
+                    <small class="hidden-xs hidden-sm"><span class="label label-primary">{{ tag }}</span></small>
                     {% endfor %}
                 </h1>
                 <p class="muted col-sm-12">
@@ -57,7 +57,8 @@ layout: base
                     <time title="{{ timestamp }}" datetime="{{ timestamp }}">
                         <span class="date">{{ article.date | date:"%A, %-d %B %Y" }}</span>
                     </time>
-                    <p>
+                    <p class="hidden-md hidden-lg"><br /></p>
+                    <p class="hidden-xs hidden-sm">
                         {% for tag in article.tags offset:1 limit:3 %}
                         <span class="label label-default">{{ tag }}</span>
                         {% endfor %}
@@ -95,8 +96,8 @@ layout: base
             {% endfor %}
             <footer>
                 <ul class="nav navbar-nav">
-                    <li class="muted"><p class="navbar-text">View <a href="/blog/">all articles</a></p></li>
-                    <li class="muted"><p class="navbar-text">Back to <a href="/">homepage</a></p></li>
+                    <li class="muted"><p class="navbar-text text-center">View <a href="/blog/">all articles</a></p></li>
+                    <li class="muted"><p class="navbar-text text-center">Back to <a href="/">homepage</a></p></li>
                 </ul>
             </footer>
         </aside>
