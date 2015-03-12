@@ -21,10 +21,10 @@ layout: base
                         {% include partial/article-youtube-embed.html %}
                     {% endif %}
                 {% elsif article.image %}
-                    <aside class="col-sm-12">
+                    <div class="col-sm-12">
                         <img src="{{ article.image.url }}" class="center-block img-responsive img-rounded" alt="{{ article.image.title }}" />
                         <br class="clearfix" />
-                    </aside>
+                    </div>
                 {% endif %}
                 <h1>
                     <a href="{{ article.url }}">{{ article.title }}</a>
