@@ -1,9 +1,9 @@
 # Site Options
 title:      UoB eSports
 caption:    We are the University of Brighton eSports Society
-url:        http://uobesports.com
+url:        uobesports.com
 email:      oliver@uobesports.com
-feedburner: http://feeds.feedburner.com/uobesports
+feedburner: https://feeds.feedburner.com/uobesports
 analytics:  UA-20955831-8
 share:      ra-5500c8be4c6071e1
 
@@ -15,7 +15,7 @@ elsewhere:
   link: /feed/
   desc: Subscribe to the website's Atom feed
 - name: Subscribe by email
-  link: http://feedburner.google.com/fb/a/mailverify?uri=uobesports
+  link: //feedburner.google.com/fb/a/mailverify?uri=uobesports
   desc: Subscribe to email updates
 - name: Teamspeak
   link: //649513.ts3.mpgs.co
@@ -29,7 +29,7 @@ elsewhere:
 
 # Jekyll Options
 safe:        true
-baseurl:     /
+baseurl:
 
 source:      .
 destination: /tmp/esports
